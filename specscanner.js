@@ -1,7 +1,9 @@
-function scanForMatches()
+const intel = new RegExp(">+[,&;\\.\\s\\w]*([iI][3,5,7]{1}.?[0-9]{4,5}[a-zA-Z]{0,2})[,&;\\.\\s\\w]*<");
+const amd = new RegExp(">+[,&;\\.\\s\\w]*(yzen+\\s?[0-9]{4,5}[a-zA-Z]{0,2})[,&;\\.\\s\\w]*<");
+
+function scanForMatches(expression)
 {
     let page = document.body.innerHTML;
-    const expression = new RegExp(">+[,&;\\.\\s\\w]*([iI][3,5,7]{1}.?[0-9]{4,5}[a-zA-Z]{0,2})[,&;\\.\\s\\w]*<");
 
     console.log("Replacing matches..");
     let matches = page.match(expression);
@@ -30,4 +32,5 @@ function scanForMatches()
     console.log("Done replacing.");
 }
 
-scanForMatches();
+scanForMatches(intel);
+scanForMatches(amd);
