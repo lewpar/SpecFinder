@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Specfinder",
+    "version": "1.0",
+  
+    "description": "Inserts anchor links into the page for CPU specs.",
+  
+    "icons": {
+      "256": "resources/icons/icon-256.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.gumtree.com.au/*"],
+        "js": ["specscanner.js"]
+      }
+    ]
+  }
+  
